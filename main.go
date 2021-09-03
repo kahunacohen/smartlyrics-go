@@ -18,9 +18,18 @@ var albums = []Album{
 func getAlbums(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, albums)
 }
+func getAlbum(c *gin.Context) {
+	//id := c.Param("id")
+	c.IndentedJSON(http.StatusOK, albums[0])
+}
 
 func main() {
-	r := gin.Default()
-	r.GET("/api/v1/artists", getAlbums)
-	r.Run() // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
+	router := gin.Default()
+	v1 := router.Group("/api/v1")
+	{
+		v1.GET("/albums", getAlbums)
+		v1.GET("/albums/:id", getAlbum)
+
+	}
+	router.Run() // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
 }
