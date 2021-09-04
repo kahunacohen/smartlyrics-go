@@ -1,9 +1,10 @@
 package album
 
 import (
+	"net/http"
+
 	"github.com/gin-gonic/gin"
 	"github.com/kahunacohen/smartlyrics/models/album"
-	"net/http"
 )
 
 var as = []album.Album{
