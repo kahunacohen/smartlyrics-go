@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/kahunacohen/smartlyrics/album"
+	"github.com/kahunacohen/smartlyrics/models/album"
 )
 
 func main() {
