@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.dev
-    command: /app/smartlyrics
+    command: bin/smartlyrics
     volumes:
       - .:/app
     ports:
