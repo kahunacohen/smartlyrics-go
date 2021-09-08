@@ -1,0 +1,12 @@
+version: "3.7"
+services:
+  web:
+    #platform: Platform, x86_64
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    command: /app/smartlyrics
+    volumes:
+      - .:/app
+    ports:
+      - "8080:8080"

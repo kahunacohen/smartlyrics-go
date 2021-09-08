@@ -1,0 +1,6 @@
+FROM golang:1.17-buster
+
+WORKDIR /app
+
+COPY . .
+EXPOSE 8080
