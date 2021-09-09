@@ -10,4 +10,8 @@ watch :
 	fswatch -e bin/ . | xargs -n1 -I{} make handle_watch
 handle_watch	: go_build
 	docker-compose -f docker-compose.dev.yaml restart web
+ls_db_data	:
+	docker exec $(CT_ID) ls /var/lib/postgresql/data
+rm_db_data	:
+	docker exec $(CT_ID) sh -c "rm -rf /var/lib/postgresql/data/*"
 
