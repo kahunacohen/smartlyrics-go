@@ -1,8 +1,8 @@
-up_dev :
+dev_up :
 	docker-compose -f docker-compose.dev.yaml up 
-up_build_dev :
+dev_up_build :
 	docker-compose -f docker-compose.dev.yaml up --build 
-down_dev	:
+dev_down	:
 	docker-compose -f docker-compose.dev.yaml down
 go_build :
 	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o bin

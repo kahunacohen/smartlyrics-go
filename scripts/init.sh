@@ -3,7 +3,7 @@
 set -e
 
 psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOSQL
-    CREATE USER docker;
-    CREATE DATABASE docker;
-    GRANT ALL PRIVILEGES ON DATABASE docker TO docker;
+    CREATE USER smartlyrics WITH ENCRYPTED PASSWORD '$SMARTLYRICS_APP_USER_PASS';
+    CREATE DATABASE smartlyrics;
+    GRANT ALL PRIVILEGES ON DATABASE smartlyrics TO smartlyrics;
 EOSQL
