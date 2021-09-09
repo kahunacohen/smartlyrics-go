@@ -1,3 +1,4 @@
 FROM golang:1.17-buster
 WORKDIR /app
 COPY ./bin/smartlyrics .
+COPY ./entrypoint.sh .

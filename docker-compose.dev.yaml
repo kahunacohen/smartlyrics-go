@@ -10,3 +10,12 @@ services:
       - .:/app
     ports:
       - "8080:8080"
+  db:
+    image: postgres
+    env_file:
+      - .env.development
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+      - ./sql:/docker-entrypoint-initdb.d
+volumes:
+  postgres_data:
