@@ -3,7 +3,10 @@ package album
 import (
 	"net/http"
 
+	"fmt"
+
 	"github.com/gin-gonic/gin"
+	"github.com/kahunacohen/smartlyrics/db"
 	"github.com/kahunacohen/smartlyrics/models/album"
 )
 
@@ -14,6 +17,11 @@ var as = []album.Album{
 }
 
 func GetAll(c *gin.Context) {
+	var albums []album.Album
+	result := db.Get().Find(&albums)
+	fmt.Println("hey:")
+	fmt.Printf("%v", result)
+
 	c.IndentedJSON(http.StatusOK, as)
 }
 func Get(c *gin.Context) {
